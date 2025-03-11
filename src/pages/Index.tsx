@@ -1,4 +1,3 @@
-
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import HeroSection from './home/HeroSection';
@@ -11,7 +10,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-more-cream">
       <Navbar />
-      <HeroSection />
+      
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center overflow-hidden">
+        <HeroSection />
+      </section>
+      
       <FeaturedProducts />
       <MissionSection />
       <VisionSection />

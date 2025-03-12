@@ -26,7 +26,7 @@ const HeroSection = () => {
         <div className="max-w-3xl animate-fadeIn">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-display">Welcome to MORE</h1>
           <p className="text-xl md:text-2xl mb-8">
-            A pioneering initiative focused on doing MORE with our tech, emboldening doing MORE with our tech.
+            A pioneering initiative focused on doing MORE with our tech.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link 

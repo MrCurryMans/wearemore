@@ -1,13 +1,16 @@
 
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ShoppingCart } from 'lucide-react';
 import { products } from '../data/products';
+import { useStripe } from '../contexts/StripeContext';
+import { toast } from '@/components/ui/use-toast';
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const { createCheckoutSession, isLoading } = useStripe();
   
   const product = products.find(p => p.id === id);
   
@@ -20,6 +23,22 @@ const ProductDetail = () => {
   }, [product, navigate]);
   
   if (!product) return null;
+
+  const handlePurchase = async () => {
+    try {
+      await createCheckoutSession(product.id, product.price);
+      toast({
+        title: "Redirecting to checkout",
+        description: "You're being redirected to our secure payment processor.",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  };
   
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -76,8 +95,17 @@ const ProductDetail = () => {
           </div>
           
           <div className="pt-6 mt-6 border-t border-gray-200">
-            <button className="w-full bg-more-green text-white font-medium py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors">
-              Coming Soon
+            <button 
+              onClick={handlePurchase}
+              disabled={isLoading}
+              className="w-full bg-more-green text-white font-medium py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center"
+            >
+              {isLoading ? (
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+              ) : (
+                <ShoppingCart size={18} className="mr-2" />
+              )}
+              {isLoading ? "Processing..." : "Buy Now"}
             </button>
           </div>
         </div>

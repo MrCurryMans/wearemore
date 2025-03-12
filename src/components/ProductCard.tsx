@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ShoppingCart } from 'lucide-react';
 
 export interface ProductProps {
   id: string;
@@ -33,8 +34,9 @@ const ProductCard = ({ id, name, image, price }: ProductProps) => {
       </div>
       <h3 className="mt-4 text-lg font-semibold text-more-darkGray">{name}</h3>
       <p className="mt-1 text-sm text-gray-500">{price}</p>
-      <button className="mt-3 bg-more-darkGray text-white py-2 px-4 rounded-md text-sm hover:bg-opacity-90 transition-all w-full">
-        Coming Soon
+      <button className="mt-3 bg-more-green text-white py-2 px-4 rounded-md text-sm hover:bg-opacity-90 transition-all w-full flex items-center justify-center">
+        <ShoppingCart size={16} className="mr-1" />
+        Buy Now
       </button>
     </div>
   );

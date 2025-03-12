@@ -7,7 +7,7 @@ const HeroSection = () => {
   const [heroLoaded, setHeroLoaded] = useState(false);
 
   return (
-    <section className="relative h-screen flex items-center overflow-hidden">
+    <section className="relative h-screen w-full flex items-center overflow-hidden">
       {!heroLoaded && (
         <div className="absolute inset-0 bg-more-cream flex items-center justify-center z-10">
           <div className="w-16 h-16 border-4 border-more-green border-t-transparent rounded-full animate-spin"></div>
@@ -24,9 +24,9 @@ const HeroSection = () => {
       />
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-white">
         <div className="max-w-3xl animate-fadeIn">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 font-display">Welcome to M.O.R.E</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 font-display">Welcome to MORE</h1>
           <p className="text-xl md:text-2xl mb-8">
-            A pioneering initiative focused on making original recycled equipment.
+            A pioneering initiative focused on doing MORE with our tech, emboldening doing MORE with our tech.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link 

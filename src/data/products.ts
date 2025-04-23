@@ -1,4 +1,3 @@
-
 export const products = [
   {
     id: 'usb-holder-keyring',
@@ -55,8 +54,37 @@ export const products = [
     image: '/lovable-uploads/a83b49aa-7479-44af-98f4-4d2a39e38ce0.png',
     price: '£22.00',
     category: 'jewelry'
+  },
+  {
+    id: 'ex1',
+    name: 'Example Product 1',
+    image: '/lovable-uploads/photo-1721322800607-8c38375eef04',
+    price: '£199.99',
+    category: 'furniture',
+    contactOnly: true
+  },
+  {
+    id: 'ex2',
+    name: 'Example Product 2',
+    image: '/lovable-uploads/photo-1472396961693-142e6e269027',
+    price: '£299.99',
+    category: 'furniture',
+    contactOnly: true
+  },
+  {
+    id: 'ex3',
+    name: 'Example Product 3',
+    image: '/lovable-uploads/photo-1582562124811-c09040d0a901',
+    price: '£149.99',
+    category: 'furniture'
+  },
+  {
+    id: 'ex4',
+    name: 'Example Product 4',
+    image: '/lovable-uploads/photo-1582562124811-c09040d0a901',
+    price: '£399.99',
+    category: 'furniture'
   }
-  
 ];
 
 export const featuredProducts = products.slice(0, 3);
@@ -65,6 +93,6 @@ export const productCategories = [
   { id: 'all', name: 'All Products' },
   { id: 'jewelry', name: 'Jewelry' },
   { id: 'accessories', name: 'Accessories' },
-  { id: 'homeware', name: 'Homeware' }
-
+  { id: 'homeware', name: 'Homeware' },
+  { id: 'furniture', name: 'Furniture/Decor' }
 ];

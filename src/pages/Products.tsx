@@ -24,7 +24,7 @@ const Products = () => {
               Our Products
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Each piece is handcrafted from reclaimed electronic components, 
+              Each piece is individually manufactured from reclaimed electronic components, 
               making every item unique and environmentally conscious.
             </p>
           </div>

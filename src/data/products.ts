@@ -56,6 +56,13 @@ export const products = [
     price: '£22.00',
     category: 'jewelry'
   }
+  {
+    id: 'pc-coffee-desk',
+    name: 'PC Case Coffee Desk',
+    image: '/lovable-uploads/a83b49aa-7479-44af-98f4-4d2a39e38ce0.png',
+    price: 'Custom Order',
+    category: 'furniture'
+  }
 ];
 
 export const featuredProducts = products.slice(0, 3);
@@ -65,4 +72,5 @@ export const productCategories = [
   { id: 'jewelry', name: 'Jewelry' },
   { id: 'accessories', name: 'Accessories' },
   { id: 'homeware', name: 'Homeware' }
+  { id: 'furniture', name: 'Furniture' }
 ];

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ShoppingCart, Mail } from 'lucide-react';
@@ -8,10 +7,11 @@ export interface ProductProps {
   name: string;
   image: string;
   price: string;
+  description: string;
   contactOnly?: boolean;
 }
 
-const ProductCard = ({ id, name, image, price, contactOnly }: ProductProps) => {
+const ProductCard = ({ id, name, image, price, description, contactOnly }: ProductProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
   
@@ -31,7 +31,6 @@ const ProductCard = ({ id, name, image, price, contactOnly }: ProductProps) => {
       onClick={contactOnly ? undefined : () => navigate(`/products/${id}`)}
     >
       <div className="overflow-hidden rounded-lg relative bg-gray-100">
-        {/* Blur placeholder */}
         <div 
           className={`absolute inset-0 bg-gray-200 transition-opacity duration-300 ${
             isLoaded ? 'opacity-0' : 'opacity-100'
@@ -42,7 +41,6 @@ const ProductCard = ({ id, name, image, price, contactOnly }: ProductProps) => {
           </div>
         </div>
         
-        {/* Main image */}
         <img 
           src={image}
           alt={name}
@@ -55,6 +53,7 @@ const ProductCard = ({ id, name, image, price, contactOnly }: ProductProps) => {
       
       <h3 className="mt-4 text-lg font-semibold text-more-darkGray truncate">{name}</h3>
       <p className="mt-1 text-sm text-gray-500">{price}</p>
+      <p className="mt-2 text-sm text-gray-600 line-clamp-2">{description}</p>
       
       {contactOnly ? (
         <button 
@@ -78,4 +77,3 @@ const ProductCard = ({ id, name, image, price, contactOnly }: ProductProps) => {
 };
 
 export default ProductCard;
-

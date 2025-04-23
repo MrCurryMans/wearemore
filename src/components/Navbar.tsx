@@ -1,12 +1,20 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingBasket } from 'lucide-react';
+import { useBasket } from '@/contexts/BasketContext';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import Basket from './Basket';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { totalItems } = useBasket();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +49,7 @@ const Navbar = () => {
           </div>
           
           {/* Desktop menu */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center">
             <div className="ml-10 flex items-center space-x-4">
               <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
                 Home
@@ -53,10 +61,38 @@ const Navbar = () => {
                 Our Story
               </Link>
             </div>
+            <div className="ml-6">
+              <DropdownMenu>
+                <DropdownMenuTrigger className="relative">
+                  <ShoppingBasket className="w-6 h-6 text-more-darkGray hover:text-more-green transition-colors" />
+                  {totalItems > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-more-green text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      {totalItems}
+                    </span>
+                  )}
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-80">
+                  <Basket />
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
           </div>
           
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="relative">
+                <ShoppingBasket className="w-6 h-6 text-more-darkGray hover:text-more-green transition-colors" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-more-green text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-80">
+                <Basket />
+              </DropdownMenuContent>
+            </DropdownMenu>
             <button 
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md text-more-darkGray hover:text-more-green focus:outline-none"

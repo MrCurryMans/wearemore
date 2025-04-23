@@ -75,15 +75,15 @@ const ProductDetail = () => {
             <p>
               This unique product is crafted from repurposed electronic components, 
               giving new life to materials that would otherwise contribute to e-waste. 
-              Each piece is handmade by our team of artisans, making every item one-of-a-kind.
+              Each piece is individually manufactured by our team, making every item one-of-a-kind.
             </p>
             
             <h3 className="text-xl font-semibold mt-6 mb-3">Features</h3>
             <ul className="list-disc pl-5 space-y-2">
               <li>Made from 100% recycled electronic components</li>
-              <li>Handcrafted by women artisans</li>
+              <li>Individually Manufactured with care</li>
               <li>Eco-friendly and sustainable</li>
-              <li>Unique design - no two pieces are exactly alike</li>
+              <li>Unique in design - no two pieces are exactly alike</li>
             </ul>
             
             <h3 className="text-xl font-semibold mt-6 mb-3">Environmental Impact</h3>

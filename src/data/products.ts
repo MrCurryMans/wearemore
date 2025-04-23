@@ -63,6 +63,7 @@ export const products = [
     price: 'Custom Order',
     category: 'furniture'
   }
+}
 ];
 
 export const featuredProducts = products.slice(0, 3);

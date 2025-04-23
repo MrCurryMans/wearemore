@@ -1,6 +1,9 @@
+
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ShoppingCart, Mail } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useBasket } from '@/contexts/BasketContext';
 
 export interface ProductProps {
   id: string;
@@ -14,6 +17,7 @@ export interface ProductProps {
 const ProductCard = ({ id, name, image, price, description, contactOnly }: ProductProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
+  const { addItem } = useBasket();
   
   useEffect(() => {
     const img = new Image();
@@ -21,14 +25,20 @@ const ProductCard = ({ id, name, image, price, description, contactOnly }: Produ
     img.onload = () => setIsLoaded(true);
   }, [image]);
 
-  const handleContact = () => {
+  const handleContact = (e: React.MouseEvent) => {
+    e.stopPropagation();
     window.location.href = "mailto:contact@example.com?subject=Inquiry about " + name;
+  };
+
+  const handleAddToBasket = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    addItem({ id, name, image, price, description });
   };
 
   return (
     <div 
       className="product-card group cursor-pointer" 
-      onClick={contactOnly ? undefined : () => navigate(`/products/${id}`)}
+      onClick={() => navigate(`/products/${id}`)}
     >
       <div className="overflow-hidden rounded-lg relative bg-gray-100">
         <div 
@@ -56,21 +66,33 @@ const ProductCard = ({ id, name, image, price, description, contactOnly }: Produ
       <p className="mt-2 text-sm text-gray-600 line-clamp-2">{description}</p>
       
       {contactOnly ? (
-        <button 
-          onClick={(e) => {
-            e.stopPropagation();
-            handleContact();
-          }}
-          className="mt-3 bg-more-teal text-white py-2 px-4 rounded-md text-sm hover:bg-opacity-90 transition-all w-full flex items-center justify-center"
+        <Button
+          onClick={handleContact}
+          className="mt-3 bg-more-teal text-white w-full"
         >
-          <Mail size={16} className="mr-1" />
+          <Mail className="mr-2 h-4 w-4" />
           Contact Us
-        </button>
+        </Button>
       ) : (
-        <button className="mt-3 bg-more-green text-white py-2 px-4 rounded-md text-sm hover:bg-opacity-90 transition-all w-full flex items-center justify-center">
-          <ShoppingCart size={16} className="mr-1" />
-          Buy Now
-        </button>
+        <div className="flex gap-2 mt-3">
+          <Button
+            onClick={handleAddToBasket}
+            variant="outline"
+            className="flex-1"
+          >
+            <ShoppingCart className="mr-2 h-4 w-4" />
+            Add to Basket
+          </Button>
+          <Button
+            onClick={(e) => {
+              e.stopPropagation();
+              navigate(`/products/${id}`);
+            }}
+            className="flex-1 bg-more-green text-white"
+          >
+            View Details
+          </Button>
+        </div>
       )}
     </div>
   );

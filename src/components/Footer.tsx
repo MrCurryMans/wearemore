@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -33,10 +34,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-medium mb-4">Our Mission</h3>
             <p className="text-gray-300 text-sm">
-
               Giving E-Waste New Life. MORE offers a more eco friendly alternative to typical E-Waste removal practices.
               Creating cheaper local solutions for Tech SME's and producing unique, individually manufactured jewellery and decor for our conscientious consumers.
-
             </p>
           </div>
           
@@ -45,7 +44,9 @@ const Footer = () => {
             <p className="text-gray-300 text-sm">
               <a href="mailto:officialmoreteam@gmail.com" className="hover:text-white transition-colors">
                 officialmoreteam@gmail.com
-                <div className="flex space-x-4">
+              </a>
+            </p>
+            <div className="mt-4 flex space-x-4">
               <a href="https://www.facebook.com/WEAREMORE10" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                 <span className="sr-only">Facebook</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -65,8 +66,6 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
-              </a>
-            </p>
           </div>
         </div>
         
@@ -79,4 +78,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

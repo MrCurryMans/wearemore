@@ -69,7 +69,9 @@ const VisionSection = () => {
             </div>
             <h3 className="text-xl font-semibold text-more-darkGray mb-3">Reducing waste</h3>
             <p className="text-gray-600">
-              Waste is an enormous problem, in our homes, in our community and around the world. We hope to scale our project and reduce waste for everyone.
+              Currently only 31% of the UK's 60 million tonnes of E-waste per year is recycled and that which is recycled travels 100's of miles and involves the use of harmful chemicals. This "recycling" is largely focused on metal extraction, with no care for environmental consequences.
+              MORE's recycling pipeline reduces this environmental impact, offering local, scalable solutions for communities.
+     
             </p>
           </div>
           
@@ -84,8 +86,7 @@ const VisionSection = () => {
             </div>
             <h3 className="text-xl font-semibold text-more-darkGray mb-3">Sourcing materials</h3>
             <p className="text-gray-600">
-              We believe in the power of transformation. We look to source high-quality, reclaimed materials to turn waste into beautiful, functional designs; avoiding the 100's of miles travelled and harmful chemicals
-              used in typical E-Waste "recycling",largely focused on metal extraction, with no care for environmental consequences
+              We believe in the power of transformation. We look to source high-quality, reclaimed materials to turn waste into beautiful, functional designs. From smaller ranges such as our bracelets, to large pieces of home furniture, we believe our tech can become anything
             </p>
           </div>
         </div>

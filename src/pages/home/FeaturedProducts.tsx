@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
             Our Products
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-more-darkGray mb-4 font-display">
-            Upcycled with Purpose
+            Reclaimed E-Waste
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Discover our unique collection of repurposed electronic components transformed into beautiful, functional designs.

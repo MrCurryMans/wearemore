@@ -37,8 +37,7 @@ const MissionSection = () => {
               Our Impact
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-more-darkGray mb-6 font-display">
-              Technology & Community Building
-            </h2>
+              Linking Waste with Inspiration            </h2>
             
             <div className="space-y-6 text-gray-600">
               <div className="flex">
@@ -47,7 +46,7 @@ const MissionSection = () => {
                 </div>
                 <div className="ml-4">
                   <h3 className="text-xl font-semibold text-more-darkGray mb-2">Technology</h3>
-                  <p>We collect and refurbish electronic waste, transforming them into products which can be used beyond the "end" of their lifecycle. An environmental friendly process which creates learning tools for electrical components.</p>
+                  <p>We collect and refurbish electronic waste, transforming them into products which can be used beyond the "end" of their lifecycle. An environmental friendly process which creates a chance to inspire young women and provoke thoughts on what we do with our tech.</p>
                 </div>
               </div>
               

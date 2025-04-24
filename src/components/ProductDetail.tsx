@@ -5,12 +5,14 @@ import { ArrowLeft, ShoppingCart } from 'lucide-react';
 import { products } from '../data/products';
 import { useStripe } from '../contexts/StripeContext';
 import { toast } from '@/components/ui/use-toast';
+import { useBasket } from '@/contexts/BasketContext';
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const { createCheckoutSession, isLoading } = useStripe();
+  const { addItem } = useBasket();
   
   const product = products.find(p => p.id === id);
   
@@ -38,6 +40,14 @@ const ProductDetail = () => {
         variant: "destructive",
       });
     }
+  };
+
+  const handleAddToBasket = () => {
+    addItem(product);
+    toast({
+      title: "Added to basket",
+      description: `${product.name} has been added to your basket.`,
+    });
   };
   
   return (
@@ -72,42 +82,63 @@ const ProductDetail = () => {
           </div>
           
           <div className="prose max-w-none text-gray-600">
-            <p>
-              This unique product is crafted from repurposed electronic components, 
-              giving new life to materials that would otherwise contribute to e-waste. 
-              Each piece is individually manufactured by our team, making every item one-of-a-kind.
-            </p>
+            <p>{product.description}</p>
             
-            <h3 className="text-xl font-semibold mt-6 mb-3">Features</h3>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>Made from 100% recycled electronic components</li>
-              <li>Individually Manufactured with care</li>
-              <li>Eco-friendly and sustainable</li>
-              <li>Unique in design - no two pieces are exactly alike</li>
-            </ul>
-            
-            <h3 className="text-xl font-semibold mt-6 mb-3">Environmental Impact</h3>
-            <p>
-              By purchasing this product, you're contributing to the reduction of electronic 
-              waste and supporting our mission to create sustainable, environmentally 
-              friendly alternatives to traditional disposal methods.
-            </p>
+            {product.contactOnly ? (
+              <div className="mt-6">
+                <p className="font-medium text-more-darkGray">
+                  This is a custom item. Please contact us for more information and to discuss your specific requirements.
+                </p>
+                <button
+                  onClick={() => window.location.href = "mailto:contact@example.com?subject=Inquiry about " + product.name}
+                  className="mt-4 w-full bg-more-teal text-white font-medium py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center"
+                >
+                  Contact Us About This Item
+                </button>
+              </div>
+            ) : (
+              <>
+                <h3 className="text-xl font-semibold mt-6 mb-3">Features</h3>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Made from 100% recycled electronic components</li>
+                  <li>Individually Manufactured with care</li>
+                  <li>Eco-friendly and sustainable</li>
+                  <li>Unique in design - no two pieces are exactly alike</li>
+                </ul>
+                
+                <h3 className="text-xl font-semibold mt-6 mb-3">Environmental Impact</h3>
+                <p>
+                  By purchasing this product, you're contributing to the reduction of electronic 
+                  waste and supporting our mission to create sustainable, environmentally 
+                  friendly alternatives to traditional disposal methods.
+                </p>
+              </>
+            )}
           </div>
           
-          <div className="pt-6 mt-6 border-t border-gray-200">
-            <button 
-              onClick={handlePurchase}
-              disabled={isLoading}
-              className="w-full bg-more-green text-white font-medium py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center"
-            >
-              {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-              ) : (
+          {!product.contactOnly && (
+            <div className="pt-6 mt-6 border-t border-gray-200 flex gap-4">
+              <button 
+                onClick={handleAddToBasket}
+                className="flex-1 bg-white border-2 border-more-green text-more-green font-medium py-3 px-6 rounded-lg hover:bg-more-green hover:text-white transition-colors flex items-center justify-center"
+              >
                 <ShoppingCart size={18} className="mr-2" />
-              )}
-              {isLoading ? "Processing..." : "Buy Now"}
-            </button>
-          </div>
+                Add to Basket
+              </button>
+              <button 
+                onClick={handlePurchase}
+                disabled={isLoading}
+                className="flex-1 bg-more-green text-white font-medium py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center"
+              >
+                {isLoading ? (
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                ) : (
+                  <ShoppingCart size={18} className="mr-2" />
+                )}
+                {isLoading ? "Processing..." : "Buy Now"}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -115,3 +146,4 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+

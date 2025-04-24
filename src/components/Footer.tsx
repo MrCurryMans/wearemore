@@ -53,15 +53,16 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-medium mb-4">Our Mission</h3>
             <p className="text-gray-300 text-sm">
-              MISSION STATEMENT
+              Giving E-Waste New Life. MORE offers a more eco friendly alternative to typical E-Waste removal practices.
+              Creating cheaper local solutions for Tech SME's and produc
             </p>
           </div>
           
           <div>
             <h3 className="text-lg font-medium mb-4">Contact</h3>
             <p className="text-gray-300 text-sm">
-              <a href="mailto:wearem.o.r.e10@gmail.com" className="hover:text-white transition-colors">
-                wearem.o.r.e10@gmail.com
+              <a href="mailto:officialmoreteam@gmail.com" className="hover:text-white transition-colors">
+                officialmoreteam@gmail.com
               </a>
             </p>
           </div>

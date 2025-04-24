@@ -45,6 +45,7 @@ const Footer = () => {
             <p className="text-gray-300 text-sm">
               <a href="mailto:officialmoreteam@gmail.com" className="hover:text-white transition-colors">
                 officialmoreteam@gmail.com
+                <br></br>
                 <div className="flex space-x-4">
               <a href="https://www.facebook.com/WEAREMORE10" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                 <span className="sr-only">Facebook</span>

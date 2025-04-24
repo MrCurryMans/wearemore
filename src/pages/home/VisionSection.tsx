@@ -31,13 +31,13 @@ const VisionSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-3 py-1 bg-more-lightGreen bg-opacity-30 text-more-green rounded-full text-sm font-medium mb-4">
-            Sustainability
+            Our Vision
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-more-darkGray mb-4 font-display">
-            Our Long-Term Vision
+            Giving E-Waste New Life
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We're committed to creating a sustainable future through innovation and community empowerment.
+            MORE is dedicated to removing harmful industry practices and incentivising young women into entering STEM.
           </p>
         </div>
         
@@ -53,7 +53,8 @@ const VisionSection = () => {
             </div>
             <h3 className="text-xl font-semibold text-more-darkGray mb-3">Helping Women and Under-privileged groups</h3>
             <p className="text-gray-600">
-              Helping others has always been the forefront of what we strive to do here at M.O.R.E and this will never change. As we go in we know people will genuinely be helped by what we do.
+              Helping others has always been the forefront of what we strive to do here at MORE and this will never change. As a female founded business, our team knows exactly what it's like to be 
+              pushed out the door in STEM discussions, and we hope to make that change.
             </p>
           </div>
           
@@ -83,7 +84,8 @@ const VisionSection = () => {
             </div>
             <h3 className="text-xl font-semibold text-more-darkGray mb-3">Sourcing materials</h3>
             <p className="text-gray-600">
-              We believe in the power of transformation. We look to source high-quality, reclaimed materials to turn waste into beautiful, functional designs.
+              We believe in the power of transformation. We look to source high-quality, reclaimed materials to turn waste into beautiful, functional designs; avoiding the 100's of miles travelled and harmful chemicals
+              used in typical E-Waste "recycling",largely focused on metal extraction, with no care for environmental consequences
             </p>
           </div>
         </div>

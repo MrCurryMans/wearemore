@@ -53,8 +53,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-medium mb-4">Our Mission</h3>
             <p className="text-gray-300 text-sm">
+
               Giving E-Waste New Life. MORE offers a more eco friendly alternative to typical E-Waste removal practices.
               Creating cheaper local solutions for Tech SME's and producing unique, individually manufactured jewellery and decor for our conscientious consumers.
+
             </p>
           </div>
           

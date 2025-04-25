@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ShoppingCart, Mail } from 'lucide-react';
@@ -19,6 +20,13 @@ const ProductCard = ({ id, name, image, price, description, contactOnly }: Produ
   const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
   const { addItem } = useBasket();
+
+  // Preload image
+  useEffect(() => {
+    const img = new Image();
+    img.src = image;
+    img.onload = () => setIsLoaded(true);
+  }, [image]);
 
   const handleContact = (e: React.MouseEvent) => {
     e.stopPropagation();

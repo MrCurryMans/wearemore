@@ -75,7 +75,7 @@ const ProductDetail = () => {
               }`}
               onLoad={() => setIsImageLoaded(true)}
               decoding="async"
-              fetchPriority="high"
+              loading="eager"
             />
           </AspectRatio>
         </div>

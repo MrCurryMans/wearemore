@@ -11,7 +11,7 @@ export const products = [
   {
     id: 'wired-bracelet',
     name: 'Wired Bracelet',
-    image: '/lovable-uploads/4f9b9567-7280-47dd-9a2c-e7e771d3c6b1.png',
+    image: '/lovable-uploads/95c4e7b6-797c-4eb4-9e12-010be4208dbe.png',
     price: '£15.00',
     category: 'jewelry',
     description: 'Handcrafted bracelet made from repurposed computer wiring, featuring intricate patterns and a unique tech-inspired design.'

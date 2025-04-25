@@ -41,7 +41,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img 
-                src="/public/lovable-uploads/Logo_Higher_Quality__1_-removebg-preview.png" 
+                src="lovable-uploads/Logo_Higher_Quality__1_-removebg-preview.png" 
                 alt="MORE Logo" 
                 className="h-12 w-auto"
               />

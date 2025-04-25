@@ -3,7 +3,7 @@ export const products = [
   {
     id: 'usb-holder-keyring',
     name: 'USB Holder Keyring',
-    image: '/lovable-uploads/78064ec7-85d8-4681-8269-1cc5b40fca8d.png',
+    image: 'https://oqaobnkcgfdqkxvaltki.supabase.co/storage/v1/object/sign/websiteimg/usbholder.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzI4N2M5NTExLTQzODUtNDI2NS1iYzhiLTEwZDRlZGVjNzAxZiJ9.eyJ1cmwiOiJ3ZWJzaXRlaW1nL3VzYmhvbGRlci5qcGciLCJpYXQiOjE3NDU2MjAyNzUsImV4cCI6MTAzODU2MjAyNzV9.HADN9PPqpbbiJtM7ecY0vWLAjDk5bm6T2fp0UFcLy2s',
     price: '£15.00',
     category: 'accessories',
     description: 'A stylish keyring that doubles as a USB holder, perfect for keeping your important data close at hand. Made from recycled computer components.'
@@ -11,7 +11,7 @@ export const products = [
   {
     id: 'wired-bracelet',
     name: 'Wired Bracelet',
-    image: '/lovable-uploads/95c4e7b6-797c-4eb4-9e12-010be4208dbe.png',
+    image: 'https://oqaobnkcgfdqkxvaltki.supabase.co/storage/v1/object/sign/websiteimg/wiredbracelet.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzI4N2M5NTExLTQzODUtNDI2NS1iYzhiLTEwZDRlZGVjNzAxZiJ9.eyJ1cmwiOiJ3ZWJzaXRlaW1nL3dpcmVkYnJhY2VsZXQuanBnIiwiaWF0IjoxNzQ1NjIwMzAyLCJleHAiOjEwMzg1NjIwMzAyfQ.0KA750ElkbsegZD8VKUrEa33fKiJhq42TWDvpoD_HxE',
     price: '£15.00',
     category: 'jewelry',
     description: 'Handcrafted bracelet made from repurposed computer wiring, featuring intricate patterns and a unique tech-inspired design.'
@@ -27,7 +27,7 @@ export const products = [
   {
     id: 'circuit-pendant',
     name: 'Circuit Pendant',
-    image: '/lovable-uploads/a82d605d-b82a-4037-8e7c-497ad6627d04.png',
+    image: 'https://oqaobnkcgfdqkxvaltki.supabase.co/storage/v1/object/sign/websiteimg/geometric%20necklace.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzI4N2M5NTExLTQzODUtNDI2NS1iYzhiLTEwZDRlZGVjNzAxZiJ9.eyJ1cmwiOiJ3ZWJzaXRlaW1nL2dlb21ldHJpYyBuZWNrbGFjZS5qcGVnIiwiaWF0IjoxNzQ1NjIwMjM3LCJleHAiOjEwMzg1NjIwMjM3fQ.3NRAuqrcv6NNw79DXejwUWesCZ4CoZNTHvB2dI1sGRw',
     price: '£18.00',
     category: 'jewelry',
     description: 'A stunning pendant necklace featuring real circuit board components, perfectly preserved in clear resin for a modern tech-inspired look.'
@@ -35,18 +35,18 @@ export const products = [
   {
     id: 'cpu-display-box',
     name: 'CPU Display Box',
-    image: '/lovable-uploads/1d2bbc38-a7bd-44a8-9700-e7166a07da87.png',
+    image: 'https://oqaobnkcgfdqkxvaltki.supabase.co/storage/v1/object/sign/websiteimg/c-pin-u.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzI4N2M5NTExLTQzODUtNDI2NS1iYzhiLTEwZDRlZGVjNzAxZiJ9.eyJ1cmwiOiJ3ZWJzaXRlaW1nL2MtcGluLXUuanBlZyIsImlhdCI6MTc0NTYyMDE3OSwiZXhwIjozMzI4MTYyMDE3OX0.ZxwvpFX3AxNWsuIJPVkHK0CzuBKu7nzw2YL3xr4xxx8',
     price: '£25.00',
     category: 'homeware',
     description: 'A decorative display box crafted from vintage CPU components. Perfect for storing small items while showcasing computing history.'
   },
   {
-    id: 'memory-keychain',
-    name: 'Memory Keychain',
-    image: '/lovable-uploads/59733e39-ad50-4c6e-92b8-eba0b80f6bd7.png',
+    id: 'cd-coaster',
+    name: 'CD Coaster',
+    image: 'https://oqaobnkcgfdqkxvaltki.supabase.co/storage/v1/object/sign/websiteimg/cdcoaster.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzI4N2M5NTExLTQzODUtNDI2NS1iYzhiLTEwZDRlZGVjNzAxZiJ9.eyJ1cmwiOiJ3ZWJzaXRlaW1nL2NkY29hc3Rlci5qcGVnIiwiaWF0IjoxNzQ1NjIwMDYzLCJleHAiOjMzMjgxNjIwMDYzfQ.0o-vBpfEMHs-1Z44-eFNfQLwkT-MwshcVaexF_h0b1c',
     price: '£12.00',
-    category: 'accessories',
-    description: 'Keep your keys organized with this unique keychain made from upcycled RAM modules, featuring authentic computer memory chips.'
+    category: 'homeware',
+    description: 'Keep your table safe, with our coaster crafted from old CDs'
   },
   {
     id: 'circuit-coaster-set',

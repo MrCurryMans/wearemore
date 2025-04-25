@@ -6,6 +6,8 @@ import { products } from '../data/products';
 import { useStripe } from '../contexts/StripeContext';
 import { toast } from '@/components/ui/use-toast';
 import { useBasket } from '@/contexts/BasketContext';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -20,7 +22,6 @@ const ProductDetail = () => {
     if (!product) {
       navigate('/products');
     }
-    
     window.scrollTo(0, 0);
   }, [product, navigate]);
   
@@ -62,17 +63,21 @@ const ProductDetail = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div className="relative bg-gray-100 rounded-xl overflow-hidden">
-          {!isImageLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-12 h-12 border-4 border-more-green border-t-transparent rounded-full animate-spin"></div>
-            </div>
-          )}
-          <img 
-            src={product.image} 
-            alt={product.name} 
-            className={`w-full h-auto rounded-xl transition-opacity duration-500 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
-            onLoad={() => setIsImageLoaded(true)}
-          />
+          <AspectRatio ratio={4/3}>
+            {!isImageLoaded && (
+              <Skeleton className="absolute inset-0 bg-gray-200" />
+            )}
+            <img 
+              src={product.image}
+              alt={product.name}
+              className={`w-full h-full object-cover rounded-xl transition-opacity duration-500 ${
+                isImageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoad={() => setIsImageLoaded(true)}
+              decoding="async"
+              fetchPriority="high"
+            />
+          </AspectRatio>
         </div>
         
         <div className="space-y-6">
@@ -146,4 +151,3 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
-

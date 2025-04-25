@@ -1,8 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ShoppingCart, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Skeleton } from '@/components/ui/skeleton';
 import { useBasket } from '@/contexts/BasketContext';
 
 export interface ProductProps {
@@ -18,12 +19,6 @@ const ProductCard = ({ id, name, image, price, description, contactOnly }: Produ
   const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
   const { addItem } = useBasket();
-  
-  useEffect(() => {
-    const img = new Image();
-    img.src = image;
-    img.onload = () => setIsLoaded(true);
-  }, [image]);
 
   const handleContact = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -40,25 +35,22 @@ const ProductCard = ({ id, name, image, price, description, contactOnly }: Produ
       className="product-card group cursor-pointer" 
       onClick={() => navigate(`/products/${id}`)}
     >
-      <div className="overflow-hidden rounded-lg relative bg-gray-100">
-        <div 
-          className={`absolute inset-0 bg-gray-200 transition-opacity duration-300 ${
-            isLoaded ? 'opacity-0' : 'opacity-100'
-          }`}
-        >
-          <div className="flex items-center justify-center h-full">
-            <div className="w-8 h-8 border-3 border-more-green border-t-transparent rounded-full animate-spin"></div>
-          </div>
-        </div>
-        
-        <img 
-          src={image}
-          alt={name}
-          className={`w-full h-48 object-cover transition-all duration-500 group-hover:scale-105 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          loading="lazy"
-        />
+      <div className="relative overflow-hidden rounded-lg bg-gray-100">
+        <AspectRatio ratio={4/3}>
+          {!isLoaded && (
+            <Skeleton className="absolute inset-0 bg-gray-200" />
+          )}
+          <img 
+            src={image}
+            alt={name}
+            className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 ${
+              isLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+            loading="lazy"
+            onLoad={() => setIsLoaded(true)}
+            decoding="async"
+          />
+        </AspectRatio>
       </div>
       
       <h3 className="mt-4 text-lg font-semibold text-more-darkGray truncate">{name}</h3>

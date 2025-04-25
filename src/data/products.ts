@@ -19,7 +19,7 @@ export const products = [
   {
     id: 'connected-coaster',
     name: 'Connected Coaster',
-    image: '/lovable-uploads/421ec531-7079-4725-8b5d-5f233b465634.png',
+    image: 'https://oqaobnkcgfdqkxvaltki.supabase.co/storage/v1/object/sign/websiteimg/circuitboardcoaster.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzI4N2M5NTExLTQzODUtNDI2NS1iYzhiLTEwZDRlZGVjNzAxZiJ9.eyJ1cmwiOiJ3ZWJzaXRlaW1nL2NpcmN1aXRib2FyZGNvYXN0ZXIuanBnIiwiaWF0IjoxNzQ1NTk0ODU1LCJleHAiOjQ4OTkxOTQ4NTV9.XKRMyv5O4iS4N5C9GciCjRzp28tqTo3tFps2jsXQtiQ',
     price: '£15.00',
     category: 'homeware',
     description: 'Protect your surfaces with style using these unique coasters made from recycled circuit boards. Each piece tells its own technological story.'

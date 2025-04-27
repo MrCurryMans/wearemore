@@ -40,7 +40,7 @@ const ProductCard = ({ id, name, image, price, description, contactOnly }: Produ
 
   return (
     <div 
-      className="product-card group cursor-pointer" 
+      className="product-card group cursor-pointer flex flex-col h-full" 
       onClick={() => navigate(`/products/${id}`)}
     >
       <div className="relative overflow-hidden rounded-lg bg-gray-100">
@@ -61,39 +61,43 @@ const ProductCard = ({ id, name, image, price, description, contactOnly }: Produ
         </AspectRatio>
       </div>
       
-      <h3 className="mt-4 text-lg font-semibold text-more-darkGray truncate">{name}</h3>
-      <p className="mt-1 text-sm text-gray-500">{price}</p>
-      <p className="mt-2 text-sm text-gray-600 line-clamp-2">{description}</p>
+      <div className="flex-grow">
+        <h3 className="mt-4 text-lg font-semibold text-more-darkGray truncate">{name}</h3>
+        <p className="mt-1 text-sm text-gray-500">{price}</p>
+        <p className="mt-2 text-sm text-gray-600 line-clamp-2">{description}</p>
+      </div>
       
-      {contactOnly ? (
-        <Button
-          onClick={handleContact}
-          className="mt-3 bg-more-teal text-white w-full"
-        >
-          <Mail className="mr-2 h-4 w-4" />
-          Contact Us
-        </Button>
-      ) : (
-        <div className="flex gap-2 mt-3">
+      <div className="mt-auto pt-4">
+        {contactOnly ? (
           <Button
-            onClick={handleAddToBasket}
-            variant="outline"
-            className="flex-1"
+            onClick={handleContact}
+            className="mt-3 bg-more-teal text-white w-full"
           >
-            <ShoppingCart className="mr-2 h-4 w-4" />
-            Add to Basket
+            <Mail className="mr-2 h-4 w-4" />
+            Contact Us
           </Button>
-          <Button
-            onClick={(e) => {
-              e.stopPropagation();
-              navigate(`/products/${id}`);
-            }}
-            className="flex-1 bg-more-green text-white"
-          >
-            View Details
-          </Button>
-        </div>
-      )}
+        ) : (
+          <div className="flex gap-2 mt-3">
+            <Button
+              onClick={handleAddToBasket}
+              variant="outline"
+              className="flex-1"
+            >
+              <ShoppingCart className="mr-2 h-4 w-4" />
+              Add to Basket
+            </Button>
+            <Button
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate(`/products/${id}`);
+              }}
+              className="flex-1 bg-more-green text-white"
+            >
+              View Details
+            </Button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

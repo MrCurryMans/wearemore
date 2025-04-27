@@ -22,7 +22,9 @@ const FeaturedProducts = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuredProducts.map(product => (
-            <ProductCard key={product.id} {...product} />
+            <div key={product.id} className="h-full flex">
+              <ProductCard {...product} />
+            </div>
           ))}
         </div>
         

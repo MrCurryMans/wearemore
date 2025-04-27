@@ -87,7 +87,7 @@
 }
 
 .product-card img {
-  @apply w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-500;
+  @apply w-full aspect-square object-cover rounded-lg mb-4 transition-transform duration-500;
 }
 
 .product-card:hover img {

@@ -21,6 +21,11 @@ const ProductDetail = () => {
   useEffect(() => {
     if (!product) {
       navigate('/products');
+      return;
+    }
+    if (product.contactOnly) {
+      navigate('/contact');
+      return;
     }
     window.scrollTo(0, 0);
   }, [product, navigate]);

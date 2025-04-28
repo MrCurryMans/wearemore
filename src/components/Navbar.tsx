@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingBasket } from 'lucide-react';
@@ -30,7 +29,6 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    // Close mobile menu when route changes
     setIsOpen(false);
   }, [location]);
 
@@ -48,7 +46,6 @@ const Navbar = () => {
             </Link>
           </div>
           
-          {/* Desktop menu */}
           <div className="hidden md:flex items-center">
             <div className="ml-10 flex items-center space-x-4">
               <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
@@ -59,6 +56,9 @@ const Navbar = () => {
               </Link>
               <Link to="/our-story" className={`nav-link ${location.pathname === '/our-story' ? 'active' : ''}`}>
                 Our Story
+              </Link>
+              <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>
+                Contact
               </Link>
             </div>
             <div className="ml-6">
@@ -78,7 +78,6 @@ const Navbar = () => {
             </div>
           </div>
           
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-4">
             <DropdownMenu>
               <DropdownMenuTrigger className="relative">
@@ -103,7 +102,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md">
           <Link 
@@ -129,6 +127,14 @@ const Navbar = () => {
               : 'text-more-darkGray hover:text-more-green'}`}
           >
             Our Story
+          </Link>
+          <Link 
+            to="/contact" 
+            className={`block px-3 py-2 rounded-md font-medium ${location.pathname === '/contact' 
+              ? 'text-more-green' 
+              : 'text-more-darkGray hover:text-more-green'}`}
+          >
+            Contact
           </Link>
         </div>
       </div>

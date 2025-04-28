@@ -69,7 +69,7 @@ const ProductCard = ({ id, name, image, price, description, contactOnly }: Produ
           <Button
           onClick={(e) => {
             e.stopPropagation();
-            navigate(`/contacts`);
+            navigate(`/contact`);
           }}
             className="mt-3 bg-more-teal text-white w-full"
           >

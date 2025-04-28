@@ -20,9 +20,10 @@ const FeaturedProducts = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Updated grid to be more responsive with an intermediate breakpoint */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredProducts.map(product => (
-            <div key={product.id} className="h-full flex">
+            <div key={product.id} className="flex">
               <ProductCard {...product} />
             </div>
           ))}

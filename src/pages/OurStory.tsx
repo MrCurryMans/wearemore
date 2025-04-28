@@ -14,14 +14,14 @@ const OurStory = () => {
               Our Story
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              The journey of MORE from concept to a sustainable, community-driven initiative.
+              The journey of MORE from a concept to a sustainable, community-driven initiative.
             </p>
           </div>
           
           {/* Content */}
           <div className="prose max-w-4xl mx-auto text-more-darkGray">
             <p className="text-lg">
-              MORE (Making Original Recycled Equipment) was founded with a simple but powerful vision: 
+              MORE was founded with a simple but powerful vision: 
               to transform electronic waste into beautiful, functional products while empowering women 
               and underrepresented groups in the technology sector.
             </p>
@@ -36,8 +36,7 @@ const OurStory = () => {
             <h2 className="text-2xl font-bold mt-8 mb-4">Our Mission</h2>
             <p>
               Our mission is twofold: to reduce electronic waste by repurposing components into new 
-              products, and to create opportunities for women and underrepresented groups to develop 
-              skills and confidence in a traditionally male-dominated industry.
+              products, and to create opportunities for young women to be introduced to STEM, aligned with their interests from a young age.
             </p>
             
             <h2 className="text-2xl font-bold mt-8 mb-4">Our Process</h2>

@@ -1,6 +1,15 @@
 
 export const products = [
   {
+    id: 'wirebonsai',
+    name: 'Copper Wire Bonsai',
+    image: '/lovable-uploads/photo-1582562124811-c09040d0a901',
+    price: 'Contact for Details',
+    contactOnly: true,
+    category: 'homeware',
+    description: 'Copper wiring coiled and branched to resemble a bonsai tree. Specially potted in circuit boards. Perfect as a unique centrepiece or trophy.'
+  },
+  {
     id: 'usb-holder-keyring',
     name: 'USB Holder Keyring',
     image: 'https://oqaobnkcgfdqkxvaltki.supabase.co/storage/v1/object/sign/websiteimg/usbholder.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzI4N2M5NTExLTQzODUtNDI2NS1iYzhiLTEwZDRlZGVjNzAxZiJ9.eyJ1cmwiOiJ3ZWJzaXRlaW1nL3VzYmhvbGRlci5qcGciLCJpYXQiOjE3NDU2MjAyNzUsImV4cCI6MTAzODU2MjAyNzV9.HADN9PPqpbbiJtM7ecY0vWLAjDk5bm6T2fp0UFcLy2s',
@@ -68,7 +77,7 @@ export const products = [
     id: 'ex1',
     name: 'Example Product 1',
     image: '/lovable-uploads/photo-1721322800607-8c38375eef04',
-    price: '£199.99',
+    price: 'Contact for Details',
     category: 'furniture',
     contactOnly: true,
     description: 'A unique piece of furniture that incorporates recycled computer parts into its modern design. Contact us for custom specifications and details.'
@@ -77,7 +86,7 @@ export const products = [
     id: 'ex2',
     name: 'Example Product 2',
     image: '/lovable-uploads/photo-1472396961693-142e6e269027',
-    price: '£299.99',
+    price: 'Contact for Details',
     category: 'furniture',
     contactOnly: true,
     description: 'Custom-made furniture piece featuring integrated tech components. Each piece is unique and made to order. Contact us to discuss your requirements.'
@@ -98,6 +107,7 @@ export const products = [
     category: 'furniture',
     description: 'Statement furniture piece featuring recycled tech components in its design. Perfect for creating a unique focal point in any room.'
   }
+ 
 ];
 
 export const featuredProducts = products.slice(0, 3);

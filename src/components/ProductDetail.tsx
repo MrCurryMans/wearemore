@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ShoppingCart } from 'lucide-react';
@@ -100,7 +99,7 @@ const ProductDetail = () => {
                   This is a custom item. Please contact us for more information and to discuss your specific requirements.
                 </p>
                 <button
-                  onClick={() => window.location.href = "mailto:contact@example.com?subject=Inquiry about " + product.name}
+                  onClick={() => navigate('/contact')}
                   className="mt-4 w-full bg-more-teal text-white font-medium py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center"
                 >
                   Contact Us About This Item

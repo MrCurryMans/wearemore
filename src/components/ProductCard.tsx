@@ -28,10 +28,7 @@ const ProductCard = ({ id, name, image, price, description, contactOnly }: Produ
     img.onload = () => setIsLoaded(true);
   }, [image]);
 
-  const handleContact = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    window.location.href = "mailto:contact@example.com?subject=Inquiry about " + name;
-  };
+
 
   const handleAddToBasket = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -70,7 +67,10 @@ const ProductCard = ({ id, name, image, price, description, contactOnly }: Produ
       <div className="mt-auto pt-4">
         {contactOnly ? (
           <Button
-            onClick={handleContact}
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate(`/contacts`);
+          }}
             className="mt-3 bg-more-teal text-white w-full"
           >
             <Mail className="mr-2 h-4 w-4" />

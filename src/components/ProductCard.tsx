@@ -67,10 +67,7 @@ const ProductCard = ({ id, name, image, price, description, contactOnly }: Produ
       <div className="mt-auto pt-4">
         {contactOnly ? (
           <Button
-          onClick={(e) => {
-            e.stopPropagation();
-            navigate(`/contact`);
-          }}
+          onClick={() => navigate('/contact')}
             className="mt-3 bg-more-teal text-white w-full"
           >
             <Mail className="mr-2 h-4 w-4" />

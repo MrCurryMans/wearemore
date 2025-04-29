@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ShoppingCart } from 'lucide-react';
@@ -20,10 +21,6 @@ const ProductDetail = () => {
   useEffect(() => {
     if (!product) {
       navigate('/products');
-      return;
-    }
-    if (product.contactOnly) {
-      navigate('/contact');
       return;
     }
     window.scrollTo(0, 0);
@@ -53,6 +50,10 @@ const ProductDetail = () => {
       title: "Added to basket",
       description: `${product.name} has been added to your basket.`,
     });
+  };
+  
+  const handleContactClick = () => {
+    navigate('/contact');
   };
   
   return (
@@ -99,7 +100,7 @@ const ProductDetail = () => {
                   This is a custom item. Please contact us for more information and to discuss your specific requirements.
                 </p>
                 <button
-                  onClick={() => navigate('/contact')}
+                  onClick={handleContactClick}
                   className="mt-4 w-full bg-more-teal text-white font-medium py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center"
                 >
                   Contact Us About This Item

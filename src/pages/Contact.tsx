@@ -25,7 +25,7 @@ const Contact = () => {
               <Mail className="w-12 h-12 text-more-green mb-4" />
               <h2 className="text-xl font-semibold mb-2">Email Us</h2>
               <a 
-                href="mailto:officialmoreteam@gmail.com" 
+                href="mailtoofficialmoreteam@gmail.com" 
                 className="text-more-green hover:underline"
               >
                 officialmoreteam@gmail.com
